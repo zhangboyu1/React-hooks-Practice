@@ -13,6 +13,10 @@ const Counter = () => {
     // userInfo is only used to display data...
     const [userInfo, setName] = useState(initialUserInfo)
 
+
+    // How to handle the state with the value of arry;
+    const [item, setItem] = useState([])
+
     return (
         <div>
             <p>You clicked {count} times</p>
@@ -36,6 +40,19 @@ const Counter = () => {
                     setName({ ...userInfo, secondName: e.target.value })
                 }
             } />
+            <p>--------------------</p>
+
+            <h1>display the iTEM</h1>
+            <button onClick={() => setItem([...item, 1])}>Apend the arry</button>
+            <ul>
+                {
+                    item.map(element =>
+                        <li>{element}</li>
+                    )
+                }
+            </ul>
+
+
 
 
         </div>
